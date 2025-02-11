@@ -82,8 +82,7 @@ Docker・Dify・Unity
 |言語・フレームワーク|Python・PHP・JavaScript・jQuery・HTML・CSS・Google App Script|
 |DB|MySQL|
 |OS|AmazonLinux2・AmazonLinux2023|
-|インフラ|-AWS
-          - API Gateway・Aurora・CloudWatch・DynamoDB・ECR・ECS・EC2・IAM・Lambda・S3・Bedrock|
+|インフラ(AWS)|API Gateway・Aurora・CloudWatch・DynamoDB・ECR・ECS・EC2・IAM・Lambda・S3・Bedrock|
 |Webサーバー|Apache|
 |ツール|Bitbucket・Docker・Amazon CodeCommit・Visual Studio Code・Backlog・Trello|
 |業務内容|メインプロダクトの新規機能実装及び機能修正。<br>社内の蓄積されたデータや資料を利用した生成AIアプリケーションチャットボットの開発、運用。<br>RPAを利用した社内の事務作業の自動化。<br>社内の経理部門向けの顧客の契約情報売上情報データ分析サービスの開発、運用。<br>美容サロン向けLINEミニアプリ、LINE公式アカウントの申請、発行業務及びメインプロダクトとのデータ紐付け。<br>カスタマーサポートセンターを通した社外からのメインプロダクトに関する問い合わせに対する問題調査。|
