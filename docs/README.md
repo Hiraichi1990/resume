@@ -5,68 +5,50 @@
 |項目名|内容|
 |----|----|
 |名前|比良 祐一|
-|生年月|1990 年 5 月|
-|居住地|神奈川県|
+|連絡先|メールアドレス： yhira1220@gmail.com<br>GitHub： htps://github.com/Hiraichi1990<br>Linkedin：www.linkedin.com/in/yuichi-hira-69110b36a|
 |最終学歴|京都芸術大学 芸術部 芸術学科|
-|資格|普通自動車第一種運転免許(AT 限定)<br>生成AIパスポート<br>AWS Certified AI Practitioner Certification<br>Python3エンジニア認定基礎試験|
+|資格|生成AIパスポート<br>AWS Certified AI Practitioner Certification(AIF)<br>Python3エンジニア認定基礎試験|
 
-## 意欲・興味
+## 概略
 
-- 最新技術を積極的にキャッチアップし、プロダクトの課題解決や提供価値の向上に寄与すること。
+### 職務要約
 
-## スキル
+- webエンジニアとしてサーバーサイドを中心にアプリケーション開発に携わって参りました。
+- 直近では大規模モデル(LLM)を活用し、社内向けチャットボットやＡＩエージェントの開発・運用を行い業務効率化を実現しました。
+- LLMを始めとした最新技術をキャッチアップし、プロダクトの課題解決や新規に価値創出することで事業成長に貢献したいと考えています。
 
-### 開発手法
-
-アジャイル開発・チケット駆動開発
-
-### 言語
+### 言語・フレームワーク
 
 |言語|経験年数|
 |----|----|
 |Python|4年|
 |PHP|4年|
-|Ruby|2年|
-|JavaScript|2年|
+|Ruby<br>Ruby on Rails|2年|
+|JavaScript<br>jQuery|2年|
 |C#|1年|
 
-### フレームワーク等
+### 生成AI関連ライブラリ・プロトコル・ベクトルデータベース
+LangChain・LangGraph・Transformers（Hugging Face）・MCP・Pinecone
 
-LangChain・LangGraph・Ruby on Rails・jQuery
+### インフラ
+AWS(EC2・Amazon Bedrock・Amazon ECS（Fargate）・IAM・Lambda・Amazon Aurora・DynamoDB・S3)
 
-### 通信プロトコル
-
-REST・GraphQL
-
-### Webサーバー
-
-Apache・Ubuntu
-
-### RDB
-
+### データベース
 MySQL
 
-### クラウド
+### コンテナ技術
+Docker
 
-#### AWS
+### ソースコード管理
+Git・GitHub・BitBucket
 
-AL2・AL2023・Aurora・CloudWatch・EC2・IAM・Lambda・CodeCommit・S3・Bedrock
+### コーディングエージェント・IDE
+Claude Code・Cline・Cursor・Visual Studio Code
 
-### プロジェクト管理
-
-Bitbucket・GitHub
-
-### ADD
-
-Cline
-
-### その他
-
-Docker・Dify・Unity
 
 ## 職務経歴詳細
 
-### 美容サロン予約一元管理サービス開発企業
+### 美容サロン予約一元管理サービス開発
 
 |||
 |----|-----|
@@ -74,10 +56,10 @@ Docker・Dify・Unity
 |業務内容|メインプロダクトの要求定義、設計、実装、リリース。<br>社内の蓄積されたデータや資料を利用した生成AIチャットボットの開発、運用。<br>RPAを利用した社内の事務作業の自動化<br>|
 |在籍期間|2020/12/01 ~ 在職中|
 |チーム規模|20人|
-|言語・フレームワーク|Python 3.10・PHP 8.3・JavaScript・jQuery・HTML5・CSS|
+|言語・フレームワーク|Python 3.10・PHP 8.3・JavaScript・jQuery・HTML5・CSS3|
 |DB|MySQL8|
 |OS|AmazonLinux2・AmazonLinux2023|
-|インフラ(AWS)|API Gateway・Aurora・CloudWatch・EC2・IAM・Lambda・Amazon S3・Amazon Bedrock|
+|インフラ(AWS)|API Gateway・Aurora・CloudWatch・EC2・IAM・Lambda・Amazon S3・Amazon ECS・Amazon Bedrock|
 |Webサーバー|Apache|
 |ソースコード管理|Bitbucket・Amazon CodeCommit|
 |プロジェクト・資料管理|Backlog・Trello・Notion|
