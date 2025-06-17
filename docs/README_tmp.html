@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E6%9B%B8">職務経歴書</h1>
+<h2 id="%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1">基本情報</h2>
+<table>
+<thead>
+<tr>
+<th>項目名</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名前</td>
+<td>比良 祐一</td>
+</tr>
+<tr>
+<td>連絡先</td>
+<td>メールアドレス： yhira1220@gmail.com<br>GitHub： htps://github.com/Hiraichi1990<br>Linkedin：www.linkedin.com/in/yuichi-hira-69110b36a</td>
+</tr>
+<tr>
+<td>最終学歴</td>
+<td>京都芸術大学 芸術部 芸術学科</td>
+</tr>
+<tr>
+<td>資格</td>
+<td>生成AIパスポート<br>AWS Certified AI Practitioner Certification(AIF)<br>Python3エンジニア認定基礎試験</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E6%A6%82%E7%95%A5">概略</h2>
+<h3 id="%E3%82%B5%E3%83%9E%E3%83%AA">サマリ</h3>
+<ul>
+<li>webエンジニアとしてサーバーサイドを中心にアプリケーションやRPA、スクレイピングツールの開発に開発に携わって参りました。</li>
+<li>上記の経験から業務効率や課題を技術的な視点で改善することに特に関心があります。直近では大規模モデル(LLM)を活用し、社内向けチャットボットやＡＩエージェントの開発・運用を行い業務効率化を実現しました。</li>
+<li>LLMを始めとした最新技術をキャッチアップし、プロダクトの課題解決や新規に価値創出することで事業成長に貢献したいと考えています。</li>
+</ul>
+<h3 id="%E8%A8%80%E8%AA%9E%E3%83%BB%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF">言語・フレームワーク</h3>
+<table>
+<thead>
+<tr>
+<th>言語</th>
+<th>経験年数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>4年</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>4年</td>
+</tr>
+<tr>
+<td>Ruby<br>Ruby on Rails</td>
+<td>2年</td>
+</tr>
+<tr>
+<td>JavaScript<br>jQuery</td>
+<td>2年</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>1年</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E7%94%9F%E6%88%90ai%E9%96%A2%E9%80%A3%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%83%BB%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E3%83%BB%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9">生成AI関連ライブラリ・プロトコル・ベクトルデータベース</h3>
+<p>LangChain・LangGraph・Auto Gen・Transformers（Hugging Face）・MCP・Pinecone</p>
+<h3 id="%E3%82%A4%E3%83%B3%E3%83%95%E3%83%A9">インフラ</h3>
+<p>AWS(EC2・Amazon Bedrock・Amazon ECS（Fargate）・IAM・Lambda・Amazon Aurora・DynamoDB・S3)</p>
+<h3 id="%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9">データベース</h3>
+<p>MySQL</p>
+<h3 id="%E3%82%B3%E3%83%B3%E3%83%86%E3%83%8A%E6%8A%80%E8%A1%93">コンテナ技術</h3>
+<p>Docker</p>
+<h3 id="%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E7%AE%A1%E7%90%86">ソースコード管理</h3>
+<p>Git・GitHub・BitBucket</p>
+<h3 id="%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%A8%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%88%E3%83%BBide">コーディングエージェント・IDE</h3>
+<p>Claude Code・Cline・Cursor・Visual Studio Code</p>
+<h2 id="%E8%81%B7%E5%8B%99%E7%B5%8C%E6%AD%B4%E8%A9%B3%E7%B4%B0">職務経歴詳細</h2>
+<h3 id="%E7%BE%8E%E5%AE%B9%E3%82%B5%E3%83%AD%E3%83%B3%E4%BA%88%E7%B4%84%E4%B8%80%E5%85%83%E7%AE%A1%E7%90%86%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E9%96%8B%E7%99%BA">美容サロン予約一元管理サービス開発</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会社名</td>
+<td>株式会社サインド</td>
+</tr>
+<tr>
+<td>プロダクト概要</td>
+<td>美容サロン予約一元管理サービス</td>
+</tr>
+<tr>
+<td>業務内容</td>
+<td>メインプロダクトの要求定義、設計、実装、リリース。<br>社内の蓄積されたデータや資料を利用した生成AIチャットボットの開発、運用。<br>RPAを利用した社内の事務作業の自動化<br></td>
+</tr>
+<tr>
+<td>業態</td>
+<td>自社開発</td>
+</tr>
+<tr>
+<td>在籍期間</td>
+<td>2020/12/01 ~ 在職中</td>
+</tr>
+<tr>
+<td>チーム規模</td>
+<td>20人</td>
+</tr>
+<tr>
+<td>言語・フレームワーク</td>
+<td>Python・PHP・JavaScript・jQuery・HTML5・CSS3</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>MySQL8</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>AmazonLinux2・AmazonLinux2023</td>
+</tr>
+<tr>
+<td>インフラ(AWS)</td>
+<td>API Gateway・Aurora・CloudWatch・EC2・IAM・Lambda・Amazon S3・Amazon ECS・Amazon Bedrock</td>
+</tr>
+<tr>
+<td>Webサーバー</td>
+<td>Apache</td>
+</tr>
+<tr>
+<td>ソースコード管理</td>
+<td>Bitbucket・Amazon CodeCommit</td>
+</tr>
+<tr>
+<td>プロジェクト・資料管理</td>
+<td>Backlog・Trello・Notion</td>
+</tr>
+<tr>
+<td>状況</td>
+<td>入社直後から現在にいたるまでメインプロダクトの機能実装に携わりました。2023年以降からサービスの規模拡大に対応する為に社内向け生成AIアプリケーション開発やRPAによる事務作業の自動化に携わりました。</td>
+</tr>
+<tr>
+<td>課題</td>
+<td>サービスの成長に伴い、ユーザーや取引先の増加による契約管理や、業務のフローの複雑化と共にサービスの深いドメイン知識が求めらる場面が顕著に増え、業務の複雑さや取りこぼし、作業工数が増大していました。</td>
+</tr>
+<tr>
+<td>行動</td>
+<td>社内サービスとして最適なユースケースを考慮した結果、社内wikiに蓄積した業務ナレッジから情報を取得することにより業務に必要な情報に特化したRAG形式のチャットボットを開発しました。また社内の契約情報を整理する事務作業に関してはRPAで管理部門が行っていた事務作業をバッチ処理で自動運用するようにしました。</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>・業務情報に特化したチャットボットをRAG形式で低コストで実装することにより、ドメイン知識に関する理解度の向上や質問や調査に発生する時間を1件につき30~50%程度程度削減が実現しました。<br>・RPAによる事務作業自動化により年間１万件以上の契約情報を処理できるようになり、関連事務作業の作業時間を70％削減することができました。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E3%82%B5%E3%82%A4%E3%83%88%E5%88%B6%E4%BD%9C%E9%96%8B%E7%99%BA%E5%8F%8A%E3%81%B3%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0%E3%83%BBweb%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%A9%E3%83%BC%E5%8F%97%E8%A8%97%E9%96%8B%E7%99%BA">サイト制作開発及びスクレイピング・Webクローラー受託開発</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>プロダクト概要</td>
+<td>店舗、個人事業者向けLPサイト実装<br>スクレイピング・Webクローラー開発</td>
+</tr>
+<tr>
+<td>業務内容</td>
+<td>・店舗や個人事業者のお客様向けにLPサイトの作成<br>・業務委託でのスクレイピングツール、webクローラーの開発</td>
+</tr>
+<tr>
+<td>業態</td>
+<td>個人開発</td>
+</tr>
+<tr>
+<td>在籍期間</td>
+<td>2018年6月 ~ 2020年11月</td>
+</tr>
+<tr>
+<td>言語・フレームワーク</td>
+<td>Python・Selenium・PHP・Ruby・Ruby on Rails・JavaScript・jQuery・HTML・CSS</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>実績・取り組み</td>
+<td>詳細なヒアリングから顧客要望を正確に把握し、要件定義から運用に至るまで一人称で行いました。<br>高評価により同顧客から追加案件を継続的に受注しました。</td>
+</tr>
+<tr>
+<td>状況</td>
+<td>店舗、個人事業者様向けのLPサイト実装や、スクレイピングツール受託開発を行いました。</td>
+</tr>
+<tr>
+<td>課題</td>
+<td>顧客からLPサイトを作成したい、スクレイピングを行いたいがどのような機能が必要でどのように実現できるかわからないといった状況からヒアリングを行い、実装から運用に至るまで一人称で行う必要がありました。</td>
+</tr>
+<tr>
+<td>行動</td>
+<td>詳細なヒアリングから顧客要望を正確に把握し、実現可能な機能の提案を行いました。以前の実務経験やキャッチアップした技術を反映し高品質な顧客体験をサービスとして還元できるよう注力しました。</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>納品後も必要に応じアフターケアを行い、高評価により同顧客から追加案件を継続的に受注しました。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E6%B1%82%E4%BA%BA%E3%82%B5%E3%82%A4%E3%83%88%E5%90%91%E3%81%91rpa%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E3%83%84%E3%83%BC%E3%83%AB%E9%96%8B%E7%99%BA%E4%BC%81%E6%A5%AD">求人サイト向けRPA、データ分析ツール開発企業</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会社名</td>
+<td>パーソルクロステクノロジー株式会社</td>
+</tr>
+<tr>
+<td>プロダクト概要</td>
+<td>求人サイト向け<br>RPA及びデータ分析ツール</td>
+</tr>
+<tr>
+<td>業務内容</td>
+<td>・UiPathを利用した求人サイト管理画面の事務作業自動化<br>・Pythonを利用した情報分析</td>
+</tr>
+<tr>
+<td>業態</td>
+<td>SES派遣</td>
+</tr>
+<tr>
+<td>在籍期間</td>
+<td>2018年2月 ~ 2018年5月</td>
+</tr>
+<tr>
+<td>言語・フレームワーク</td>
+<td>Python・Pandas・HTML・CSS</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>ツール</td>
+<td>UiPath</td>
+</tr>
+<tr>
+<td>チーム規模</td>
+<td>7名</td>
+</tr>
+<tr>
+<td>状況</td>
+<td>派遣先企業様の現場で、企業の採用フローフローなど短期間で大量の求人データをブラウザ上で処理の為の人員や作業時間が必要な状況でした。</td>
+</tr>
+<tr>
+<td>課題</td>
+<td>作業時間や作業に割かれる人員を削減し、短時間での処理を完了するためにRPA開発が急務でした。</td>
+</tr>
+<tr>
+<td>行動</td>
+<td>これまで人が手作業で行っていた作業をPython(Selenium)やUiPathを利用したRPAツールを開発しバッチ処理を実装しました。併せて処理結果などのデータを出力できるようにしそれを分析したものもナレッジとして蓄積し今後の改善点の洗い出し等に利用できるようにしました。</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>ヒューマンエラー削減による効率化や作業時間の大幅短縮を実現しました。<br>またPythonを用いたデータ分析を行うことで効率化や収益向上に<br>必要な情報の取得することで、今後のチームの業務の意思決定に役立てることができました。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E9%9F%B3%E6%A5%BD%E5%AD%A6%E7%BF%92%E5%A1%BE%E9%81%8B%E5%96%B6%E4%BC%81%E6%A5%AD%E3%81%AE%E6%95%99%E6%9D%90%E9%96%8B%E7%99%BA%E9%83%A8%E9%96%80">音楽学習塾運営企業の教材開発部門</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会社名</td>
+<td>株式会社こうゆう</td>
+</tr>
+<tr>
+<td>プロダクト概要</td>
+<td>自社音楽教室向けICT教材</td>
+</tr>
+<tr>
+<td>業務内容</td>
+<td>・クライアントサイドアプリケーションの実装<br>・サーバーサイドAPIの実装、運用</td>
+</tr>
+<tr>
+<td>業態</td>
+<td>自社開発</td>
+</tr>
+<tr>
+<td>在籍期間</td>
+<td>2017年5月 ~ 2018年2月</td>
+</tr>
+<tr>
+<td>言語・フレームワーク</td>
+<td>Ruby・Ruby on Rails・C#</td>
+</tr>
+<tr>
+<td>DB</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>ツール</td>
+<td>UiPath</td>
+</tr>
+<tr>
+<td>チーム規模</td>
+<td>10名</td>
+</tr>
+<tr>
+<td>状況</td>
+<td>入社時点ではプロダクトにはC#を用いたクライアントサイドのアプリケーションのみしかなく、ログイン機能やデータベース管理が必要な状況でした。</td>
+</tr>
+<tr>
+<td>課題</td>
+<td>サーバーサイドアプリケーションでユーザー情報や成績を管理し、個別の顧客に紐付いた継続的な情報利用や認証を実装する必要がありましたがありました。</td>
+</tr>
+<tr>
+<td>行動</td>
+<td>Ruby on Railsを用いたサーバーサイドAPIを実装、運用までを行い大幅な機能追加を実現しました。<br>また、フロントエンドのソースコードが散逸し管理がままならない状況であった為全体的なリファクタリングを行い可読性や保守性を高めました。<br>更にプロダクトが端末に直接ビルドされて利用される状況であったものをiOSアプリケーションとしてAppStoreでインストールできるように申請、リリースまで行い広く利用可能にしました。</td>
+</tr>
+<tr>
+<td>結果</td>
+<td>サーバーサイドでのユーザーの成績をはじめとした継続的な情報管理を可能になり、プロダクトのアプリケーションとしての品質を向上させることができました。</td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
